@@ -1,0 +1,29 @@
+{
+    "name": "openweather-api",
+    "version": "1.0.0",
+    "description": "Acceso a la API de OpenWeather",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha",
+        "watch": "tsc -w"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ruslanguns/anartz-npm-openweather-api.git"
+    },
+    "keywords": [],
+    "author": "Ruslan Gonzalez <ruslanguns@gmail.com> (http://rusgunx.tk/)",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ruslanguns/anartz-npm-openweather-api/issues"
+    },
+    "homepage": "https://github.com/ruslanguns/anartz-npm-openweather-api#readme",
+    "dependencies": {
+        "axios": "^0.18.0"
+    },
+    "devDependencies": {
+        "chai": "^4.2.0",
+        "mocha": "^5.2.0",
+        "nock": "^10.0.6"
+    }
+}
