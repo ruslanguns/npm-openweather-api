@@ -1,6 +1,6 @@
 {
     "name": "proj-2-openweather",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Acceso a la API de OpenWeather",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
