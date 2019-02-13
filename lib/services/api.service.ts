@@ -21,7 +21,7 @@ export class ApiService {
      * Configurar las unidades métricas en la peticiones de las API
      * @param unidad para configurar si queremos usar grados centígrados
      */
-    configurarUnidadMetrica( unidad: string ) {
+    private configurarUnidadMetrica( unidad: string ) {
         this.unitMetric = '';
         if ( unidad === 'm' || unidad === 'metric') {
             this.unitMetric = '&units=metric';
@@ -32,7 +32,7 @@ export class ApiService {
      * Comprobar el idioma por defecto
      * @param idioma Idioma o lenguaje en ISO
      */
-    configurarIdioma( idioma: string ) {
+    private configurarIdioma( idioma: string ) {
         this.lang = '';
         if ( idioma === 'es' || idioma === 'español' ) {
             this.lang = '&lang=es';
@@ -55,13 +55,8 @@ export class ApiService {
             filtro = `q=${ nomCiudad },${ codPais }${ parametros }`;
         }
 
-        const URL = `${ URL_LOCALHOST }${ CURRENT }${ filtro }`;
+        return this.requestAPI(`${ URL_LOCALHOST }${ CURRENT }${ filtro }`);
 
-        return axios.get( URL ).then (
-            e => e.data
-        ).catch (
-            error => error
-        );
     }
 
     /**
@@ -81,13 +76,8 @@ export class ApiService {
             filtro = `lat=${ loc.lat }&lon=${ loc.lon }${ parametros }`
         }
 
-        const URL = `${ URL_LOCALHOST }${ CURRENT }${ filtro }`;
+        return this.requestAPI(`${ URL_LOCALHOST }${ CURRENT }${ filtro }`);
 
-        return axios.get( URL ).then (
-            e => e.data
-        ).catch (
-            error => error
-        );
     }
 
     /**
@@ -106,9 +96,13 @@ export class ApiService {
             filtro = `zip=${ codZIP },${ codPais }${ parametros }`;
         }
 
-        const URL = `${ URL_LOCALHOST }${ CURRENT }${ filtro }`;
+        return this.requestAPI(`${ URL_LOCALHOST }${ CURRENT }${ filtro }`);
 
-        return axios.get( URL ).then (
+    }
+
+    private requestAPI( url: string ) {
+
+        return axios.get( url ).then (
             e => e.data
         ).catch (
             error => error

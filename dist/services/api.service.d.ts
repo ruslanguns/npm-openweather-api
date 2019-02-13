@@ -8,12 +8,12 @@ export declare class ApiService {
      * Configurar las unidades métricas en la peticiones de las API
      * @param unidad para configurar si queremos usar grados centígrados
      */
-    configurarUnidadMetrica(unidad: string): void;
+    private configurarUnidadMetrica;
     /**
      * Comprobar el idioma por defecto
      * @param idioma Idioma o lenguaje en ISO
      */
-    configurarIdioma(idioma: string): void;
+    private configurarIdioma;
     /**
      * Buscar por nombre
      * @param nomCiudad Nombre de ciudad
@@ -31,4 +31,5 @@ export declare class ApiService {
      * @param codPais Codigo de pais España = es
      */
     buscarPorZIP(codZIP: string, codPais?: string): Promise<any>;
+    private requestAPI;
 }

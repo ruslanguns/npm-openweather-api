@@ -46,8 +46,7 @@ var ApiService = /** @class */ (function () {
         else {
             filtro = "q=" + nomCiudad + "," + codPais + parametros;
         }
-        var URL = "" + constants_1.URL_LOCALHOST + constants_1.CURRENT + filtro;
-        return axios_1.default.get(URL).then(function (e) { return e.data; }).catch(function (error) { return error; });
+        return this.requestAPI("" + constants_1.URL_LOCALHOST + constants_1.CURRENT + filtro);
     };
     /**
      * Buscar por localización geografica
@@ -64,8 +63,7 @@ var ApiService = /** @class */ (function () {
             console.log('Buscando ', loc.lat, loc.lon);
             filtro = "lat=" + loc.lat + "&lon=" + loc.lon + parametros;
         }
-        var URL = "" + constants_1.URL_LOCALHOST + constants_1.CURRENT + filtro;
-        return axios_1.default.get(URL).then(function (e) { return e.data; }).catch(function (error) { return error; });
+        return this.requestAPI("" + constants_1.URL_LOCALHOST + constants_1.CURRENT + filtro);
     };
     /**
      * Buscar por código ZIP
@@ -82,8 +80,10 @@ var ApiService = /** @class */ (function () {
         else {
             filtro = "zip=" + codZIP + "," + codPais + parametros;
         }
-        var URL = "" + constants_1.URL_LOCALHOST + constants_1.CURRENT + filtro;
-        return axios_1.default.get(URL).then(function (e) { return e.data; }).catch(function (error) { return error; });
+        return this.requestAPI("" + constants_1.URL_LOCALHOST + constants_1.CURRENT + filtro);
+    };
+    ApiService.prototype.requestAPI = function (url) {
+        return axios_1.default.get(url).then(function (e) { return e.data; }).catch(function (error) { return error; });
     };
     return ApiService;
 }());
