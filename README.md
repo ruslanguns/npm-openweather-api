@@ -6,12 +6,12 @@ Con esta librería podremos consumir las API de openweather.org y utilizarla en 
 
 Javascript
 ```javascript
-var API = require('modulo');
+var API = require('proj-2-openweather').ApiService;
 ```
 
 TypeScript
 ```typescript
-import openweather-api from 'modulo';
+import ApiService from 'proj-2-openweather';
 ```
 
 ### Uso de modulo
