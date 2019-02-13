@@ -2,7 +2,8 @@
     "name": "proj-2-openweather",
     "version": "1.0.0",
     "description": "Acceso a la API de OpenWeather",
-    "main": "index.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "test": "mocha",
         "watch": "tsc -w"
